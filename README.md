@@ -5,3 +5,5 @@ To run enter the -i <input_file> and the -o <output_file> names, example:
 
 python -i infile.csv -o outfile.txt 
 
+
+Code is optimized for Python 3.6.2
