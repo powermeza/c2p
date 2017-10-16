@@ -4,6 +4,7 @@ input_file =  "."
 output_file = "."
 errors = 0
 lines_converted = 0
+special_chars_replaced = 0
 opts = []
 args = []
 
@@ -45,11 +46,11 @@ if input_file == "." or output_file == ".":
     print ("|----------------------------------------------------------------|")
     sys.exit()
 
-print ("|    Input file:      ", input_file)
-print ("|    Output file:     ", output_file)
+print ("|    Input file:             ", input_file)
+print ("|    Output file:            ", output_file)
 
 from time import gmtime, strftime
-print ("|    Start:           ", strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime()))
+print ("|    Start:                  ", strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime()))
 
 #input file
 f_input = open(input_file)
@@ -67,6 +68,7 @@ for line in reader:
     for c in mod_line_i:
         if c == chr(10) or c == chr(124):
             mod_line_o = mod_line_o + " "
+            special_chars_replaced = special_chars_replaced + 1
         else:
             mod_line_o = mod_line_o + c
     line["Note Text"] = mod_line_o
@@ -78,8 +80,9 @@ f_input.close()
 f_out.close()
 
 from time import gmtime, strftime
-print ("|    End:             ", strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime()))
-print ("|    Lines processed: ", lines_converted)
-print ("|    Errors:          ", errors)
+print ("|    End:                    ", strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime()))
+print ("|    Lines processed:        ", lines_converted)
+print ("|    Special chars replaced: ", special_chars_replaced)
+print ("|    Errors:                 ", errors)
 print ("|                                                                |")
 print ("|----------------------------------------------------------------|")
