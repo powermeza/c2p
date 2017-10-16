@@ -65,7 +65,7 @@ for line in reader:
     mod_line_o = ""
     #    mod_line.replace(chr(10),"%")
     for c in mod_line_i:
-        if c == chr(10):
+        if c == chr(10) or c == chr(124):
             mod_line_o = mod_line_o + " "
         else:
             mod_line_o = mod_line_o + c
