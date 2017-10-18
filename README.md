@@ -7,3 +7,7 @@ python -i infile.csv -o outfile.txt
 
 
 Code is optimized for Python 3.6.2
+
+To create exeutable with cx_Freeze :
+
+   python setup.py build 
