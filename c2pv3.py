@@ -8,7 +8,7 @@ special_chars_replaced = 0
 opts = []
 args = []
 
-#Small Change
+#Small Change v02 
 
 print ("")
 print ("|-----------------[ c2p converter by Juan Meza ]-----------------|")
